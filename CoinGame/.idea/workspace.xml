@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f1937b14-bc36-4cf7-aff1-ef748c370da7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/client/SimpleTestClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client/SimpleTestClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/enumeration/BetType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/enumeration/BetType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/enumeration/CoinFace.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/enumeration/CoinFace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/interfaces/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/interfaces/Coin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/interfaces/CoinPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/interfaces/CoinPair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/interfaces/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/interfaces/GameEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/interfaces/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/interfaces/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/GameEngineCallbackImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/view/interfaces/GameEngineCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/interfaces/GameEngineCallback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/CoinImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoinImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CoinPairImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoinPairImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

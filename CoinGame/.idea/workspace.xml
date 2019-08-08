@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f1937b14-bc36-4cf7-aff1-ef748c370da7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/SimpleTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/SimpleTestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/SimplePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SimplePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/enumeration/BetType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/enumeration/BetType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/enumeration/CoinFace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/enumeration/CoinFace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/interfaces/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/interfaces/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/interfaces/CoinPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/interfaces/CoinPair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/interfaces/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/interfaces/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/interfaces/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/interfaces/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/interfaces/GameEngineCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/interfaces/GameEngineCallback.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

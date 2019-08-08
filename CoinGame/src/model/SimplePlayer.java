@@ -87,6 +87,6 @@ public class SimplePlayer implements Player
     @Override
     public String toString()
     {
-        
+
     }
 }

@@ -16,25 +16,55 @@ public enum BetType
          @Override
          public void applyWinLoss(Player player, CoinPair spinnerResult)
          {
-
+             if(player.getResult().getCoin1().equals(spinnerResult.getCoin1()))
+             {
+                 //Win
+                 player.setPoints(player.getPoints() + player.getBet());
+             }
+             else
+             {
+                 //Loss
+                 player.setPoints(player.getPoints() - player.getBet());
+             }
          }
       },
     COIN2 {
+        @Override
         public void applyWinLoss(Player player, CoinPair spinnerResult)
         {
-
+            if(player.getResult().getCoin2().equals(spinnerResult.getCoin2()))
+            {
+                //Win
+                player.setPoints(player.getPoints() + player.getBet());
+            }
+            else
+            {
+                //Loss
+                player.setPoints(player.getPoints() - player.getBet());
+            }
         }
     },
     BOTH {
+        @Override
         public void applyWinLoss(Player player, CoinPair spinnerResult)
         {
-
+            if(player.getResult().equals(spinnerResult))
+            {
+                //Win double
+                player.setPoints(player.getPoints() + (player.getBet() * 2));
+            }
+            else
+            {
+                //Loss
+                player.setPoints(player.getPoints() - player.getBet());
+            }
         }
     },
     NO_BET {
+        @Override
         public void applyWinLoss(Player player, CoinPair spinnerResult)
         {
-
+            //Nothing happens
         }
     };
       

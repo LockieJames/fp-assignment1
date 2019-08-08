@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f1937b14-bc36-4cf7-aff1-ef748c370da7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/client/SimpleTestClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client/SimpleTestClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/CoinImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/CoinImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/enumeration/BetType$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/enumeration/BetType$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/enumeration/BetType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/enumeration/BetType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/SimpleTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/SimpleTestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SimplePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SimplePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/enumeration/BetType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/enumeration/BetType.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

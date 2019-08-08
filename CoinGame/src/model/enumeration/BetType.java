@@ -16,7 +16,7 @@ public enum BetType
          @Override
          public void applyWinLoss(Player player, CoinPair spinnerResult)
          {
-            
+
          }
       },
     COIN2 {

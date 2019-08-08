@@ -14,6 +14,8 @@ public class SimplePlayer implements Player
 
     //??
     private int points;
+    private BetType betType;
+    private CoinPair coinPair;
 
     public SimplePlayer(String playerId, String playerName, int initialPoints)
     {
@@ -59,12 +61,12 @@ public class SimplePlayer implements Player
 
     public void setBetType(BetType betType)
     {
-
+        this.betType = betType;
     }
 
     public BetType getBetType()
     {
-
+        return betType;
     }
 
     public void resetBet()
@@ -74,17 +76,17 @@ public class SimplePlayer implements Player
 
     public CoinPair getResult()
     {
-
+        return coinPair;
     }
 
     public void setResult(CoinPair coinPair)
     {
-
+        this.coinPair = coinPair;
     }
 
     @Override
     public String toString()
     {
-
+        
     }
 }

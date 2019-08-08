@@ -12,14 +12,31 @@ import model.interfaces.Player;
  */
 public enum BetType
 {
-      COIN1
-      {
+    COIN1 {
          @Override
          public void applyWinLoss(Player player, CoinPair spinnerResult)
          {
-            // TODO implementation
+            
          }
       },
+    COIN2 {
+        public void applyWinLoss(Player player, CoinPair spinnerResult)
+        {
+
+        }
+    },
+    BOTH {
+        public void applyWinLoss(Player player, CoinPair spinnerResult)
+        {
+
+        }
+    },
+    NO_BET {
+        public void applyWinLoss(Player player, CoinPair spinnerResult)
+        {
+
+        }
+    };
       
       // TODO finish this class with other enum constants
    

@@ -15,6 +15,7 @@ import java.util.LinkedList;
 public class GameEngineImpl implements GameEngine
 {
     private LinkedList<Player> players = new LinkedList<>();
+    private GameEngineCallback gameEngineCallback = null;
 
     public GameEngineImpl()
     {
@@ -92,12 +93,20 @@ public class GameEngineImpl implements GameEngine
 
     public void addGameEngineCallback(GameEngineCallback gameEngineCallback)
     {
-
+        this.gameEngineCallback = gameEngineCallback;
     }
 
     public boolean removeGameEngineCallback(GameEngineCallback gameEngineCallback)
     {
-        return true;
+        boolean removed = false;
+
+        if(this.gameEngineCallback.equals(gameEngineCallback))
+        {
+            removed = true;
+            this.gameEngineCallback = null;
+        }
+
+        return removed;
     }
 
     public Collection<Player> getAllPlayers()

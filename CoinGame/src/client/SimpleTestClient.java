@@ -39,65 +39,65 @@ public class SimpleTestClient
         Validator.validate(true);
 
         // create some test players
-//        Player[] players = new Player[] { new SimplePlayer("1", "The Coin Master", 1000),
-//                new SimplePlayer("2", "The Loser", 750), new SimplePlayer("3", "The Dabbler", 500) };
-//
-//        // add logging callback
-//        gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
-//
-//        // main loop to add players and place a bet
-//        int enumOrdinal = 0;
-//        for (Player player : players)
-//        {
-//            gameEngine.addPlayer(player);
-//            // mod with BetType length so we always stay in range even if num players increases
-//            // NOTE: we are passing a different BetType each time!
-//            gameEngine.placeBet(player, 100, BetType.values()[enumOrdinal++ % BetType.values().length]);
-//            gameEngine.spinPlayer(player, 100, 1000, 100, 50, 500, 50);
-//        }
-//
-//        logger.log(Level.INFO, "SPINNING ...");
-//        // OutputTrace.pdf was generated with these parameter values (using only first 3 params as per spec)
-//        gameEngine.spinSpinner(100, 1000, 200, 50, 500, 25);
+        Player[] players = new Player[] { new SimplePlayer("1", "The Coin Master", 1000),
+                new SimplePlayer("2", "The Loser", 750), new SimplePlayer("3", "The Dabbler", 500) };
 
-        // TODO reset bets for next round if you were playing again
-
+        // add logging callback
         gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
 
-        Player[] players2 = new Player[] { new SimplePlayer("1", "The Coin Master", 1000),
-                new SimplePlayer("2", "The Loser", 750),
-                new SimplePlayer("3", "The Dabbler", 500),
-                new SimplePlayer("4", "Poop", 200),
-                new SimplePlayer("5", "Lockie", 0),
-                new SimplePlayer("6", "Stef Queen", 300)};
-
-        gameEngine.addPlayer(players2[0]);
-        gameEngine.placeBet(players2[0], 200, BetType.COIN1);
-        gameEngine.spinPlayer(players2[0], 100, 1000, 100, 50, 500, 50);
-
-        gameEngine.addPlayer(players2[1]);
-        gameEngine.placeBet(players2[1], 1000, BetType.BOTH);
-        gameEngine.spinPlayer(players2[1], 100, 1000, 100, 50, 500, 50);
-
-        gameEngine.addPlayer(players2[2]);
-        gameEngine.placeBet(players2[2], 0, BetType.NO_BET);
-        gameEngine.spinPlayer(players2[2], 100, 1000, 100, 50, 500, 50);
-
-        gameEngine.addPlayer(players2[3]);
-        gameEngine.placeBet(players2[3], 550, BetType.COIN2);
-        gameEngine.spinPlayer(players2[3], 100, 1000, 100, 50, 500, 50);
-
-        gameEngine.addPlayer(players2[4]);
-        gameEngine.placeBet(players2[4], 100, BetType.COIN1);
-        gameEngine.spinPlayer(players2[4], 100, 1000, 100, 50, 500, 50);
-
-        gameEngine.addPlayer(players2[5]);
-        gameEngine.placeBet(players2[5], 69, BetType.COIN2);
-        gameEngine.spinPlayer(players2[5], 100, 1000, 100, 50, 500, 50);
+        // main loop to add players and place a bet
+        int enumOrdinal = 0;
+        for (Player player : players)
+        {
+            gameEngine.addPlayer(player);
+            // mod with BetType length so we always stay in range even if num players increases
+            // NOTE: we are passing a different BetType each time!
+            gameEngine.placeBet(player, 100, BetType.values()[enumOrdinal++ % BetType.values().length]);
+            gameEngine.spinPlayer(player, 100, 1000, 100, 50, 500, 50);
+        }
 
         logger.log(Level.INFO, "SPINNING ...");
         // OutputTrace.pdf was generated with these parameter values (using only first 3 params as per spec)
         gameEngine.spinSpinner(100, 1000, 200, 50, 500, 25);
+
+        // TODO reset bets for next round if you were playing again
+
+//        gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
+//
+//        Player[] players2 = new Player[] { new SimplePlayer("1", "The Coin Master", 1000),
+//                new SimplePlayer("2", "The Loser", 750),
+//                new SimplePlayer("3", "The Dabbler", 500),
+//                new SimplePlayer("4", "Poop", 200),
+//                new SimplePlayer("5", "Lockie", 0),
+//                new SimplePlayer("6", "Stef Queen", 300)};
+//
+//        gameEngine.addPlayer(players2[0]);
+//        gameEngine.placeBet(players2[0], 200, BetType.COIN1);
+//        gameEngine.spinPlayer(players2[0], 100, 1000, 100, 50, 500, 50);
+//
+//        gameEngine.addPlayer(players2[1]);
+//        gameEngine.placeBet(players2[1], 1000, BetType.BOTH);
+//        gameEngine.spinPlayer(players2[1], 100, 1000, 100, 50, 500, 50);
+//
+//        gameEngine.addPlayer(players2[2]);
+//        gameEngine.placeBet(players2[2], 0, BetType.NO_BET);
+//        gameEngine.spinPlayer(players2[2], 100, 1000, 100, 50, 500, 50);
+//
+//        gameEngine.addPlayer(players2[3]);
+//        gameEngine.placeBet(players2[3], 550, BetType.COIN2);
+//        gameEngine.spinPlayer(players2[3], 100, 1000, 100, 50, 500, 50);
+//
+//        gameEngine.addPlayer(players2[4]);
+//        gameEngine.placeBet(players2[4], 100, BetType.COIN1);
+//        gameEngine.spinPlayer(players2[4], 100, 1000, 100, 50, 500, 50);
+//
+//        gameEngine.addPlayer(players2[5]);
+//        gameEngine.placeBet(players2[5], 69, BetType.COIN2);
+//        gameEngine.spinPlayer(players2[5], 100, 1000, 100, 50, 500, 50);
+//
+//        logger.log(Level.INFO, "SPINNING ...");
+//        // OutputTrace.pdf was generated with these parameter values (using only first 3 params as per spec)
+//        gameEngine.spinSpinner(100, 1000, 200, 50, 500, 25);
 
     }
 }

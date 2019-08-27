@@ -21,7 +21,7 @@ public class SimplePlayer implements Player
     {
         this.playerId = playerId;
         this.playerName = playerName;
-        this.points = initialPoints;
+        points = initialPoints;
     }
 
     public String getPlayerName()

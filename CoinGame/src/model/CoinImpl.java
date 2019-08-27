@@ -21,7 +21,7 @@ public class CoinImpl implements Coin
         Random rand = new Random();
         CoinFace arr [] = CoinFace.values();
 
-        face = arr[rand.nextInt(1)];
+        face = arr[rand.nextInt(2)];
     }
 
     public int getNumber()

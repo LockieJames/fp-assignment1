@@ -67,6 +67,8 @@ public enum BetType
             //Nothing happens
         }
     };
+
+
       
       // TODO finish this class with other enum constants
    

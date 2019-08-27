@@ -10,7 +10,6 @@ public class SimplePlayer implements Player
 {
     private String playerId;
     private String playerName;
-    private int initialPoints;
 
     //??
     private int points;
@@ -22,7 +21,7 @@ public class SimplePlayer implements Player
     {
         this.playerId = playerId;
         this.playerName = playerName;
-        this.initialPoints = initialPoints;
+        this.points = initialPoints;
     }
 
     public String getPlayerName()
@@ -81,6 +80,7 @@ public class SimplePlayer implements Player
     public void resetBet()
     {
         bet = 0;
+        this.betType = BetType.NO_BET;
     }
 
     public CoinPair getResult()

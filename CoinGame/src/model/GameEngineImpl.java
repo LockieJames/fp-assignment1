@@ -11,42 +11,46 @@ import view.interfaces.GameEngineCallback;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 import static java.lang.Thread.sleep;
 
 public class GameEngineImpl implements GameEngine
 {
-    private LinkedList<Player> players = new LinkedList<>();
-    private LinkedList<GameEngineCallback> gameEngineCallbacks = new LinkedList<>();
+    private List<Player> players = new LinkedList<>();
+    private List<GameEngineCallback> gameEngineCallbacks = new LinkedList<>();
 
     public void spinPlayer(Player player, int initialDelay1, int finalDelay1, int delayIncrement1, int initialDelay2, int finalDelay2, int delayIncrement2) throws java.lang.IllegalArgumentException
     {
         try
         {
             CoinPair coinPair = new CoinPairImpl();
-            Iterator<GameEngineCallback> itr = gameEngineCallbacks.iterator();
-            GameEngineCallback a = null;
 
-            for(int k = 0; k < gameEngineCallbacks.size(); k++)
+            for(int i = initialDelay1; i <= finalDelay1; i += delayIncrement1)
             {
-                if(k + 1 == gameEngineCallbacks.size())
+                for(GameEngineCallback gameEngineCallback : gameEngineCallbacks)
                 {
-                    a = itr.next();
+                    gameEngineCallback.playerCoinUpdate(player, coinPair.getCoin1(), this);
                 }
-            }
 
-            for(int i = initialDelay1; i <= finalDelay1; i = i + delayIncrement1)
-            {
-                a.playerCoinUpdate(player, coinPair.getCoin1(), this);
-                a.playerCoinUpdate(player, coinPair.getCoin2(), this);
+                for(GameEngineCallback gameEngineCallback : gameEngineCallbacks)
+                {
+                    gameEngineCallback.playerCoinUpdate(player, coinPair.getCoin2(), this);
+                }
 
                 sleep(i);
             }
 
             player.setResult(coinPair);
-            a.playerResult(player, coinPair, this);
 
-        } catch (InterruptedException e) {
+            for(GameEngineCallback gameEngineCallback : gameEngineCallbacks)
+            {
+                gameEngineCallback.playerResult(player, coinPair, this);
+            }
+
+        }
+        catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
@@ -56,28 +60,31 @@ public class GameEngineImpl implements GameEngine
         try
         {
             CoinPair coinPair = new CoinPairImpl();
-            Iterator<GameEngineCallback> itr = gameEngineCallbacks.iterator();
-            GameEngineCallback a = null;
 
-            for(int k = 0; k < gameEngineCallbacks.size(); k++)
+            for(int i = initialDelay1; i <= finalDelay1; i += delayIncrement1)
             {
-                if(k + 1 == gameEngineCallbacks.size())
+                for(GameEngineCallback gameEngineCallback : gameEngineCallbacks)
                 {
-                    a = itr.next();
-                }
-            }
+                    gameEngineCallback.spinnerCoinUpdate(coinPair.getCoin1(), this);
 
-            for(int i = initialDelay1; i <= finalDelay1; i = i + delayIncrement1)
-            {
-                a.spinnerCoinUpdate(coinPair.getCoin1(), this);
-                a.spinnerCoinUpdate(coinPair.getCoin2(), this);
+
+                }
+
+                for(GameEngineCallback gameEngineCallback : gameEngineCallbacks)
+                {
+                    gameEngineCallback.spinnerCoinUpdate(coinPair.getCoin2(), this);
+                }
 
                 sleep(i);
             }
 
-            a.spinnerResult(coinPair, this);
-
-        } catch (InterruptedException e) {
+            for(GameEngineCallback gameEngineCallback : gameEngineCallbacks)
+            {
+                gameEngineCallback.spinnerResult(coinPair, this);
+            }
+        }
+        catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
     }
@@ -85,11 +92,12 @@ public class GameEngineImpl implements GameEngine
     public void applyBetResults(CoinPair spinnerResult)
     {
         Iterator<Player> itr = players.iterator();
+
         for(int i = 0; i < players.size(); i++)
         {
-            Player p = itr.next();
+            Player player = itr.next();
 
-            p.getBetType().applyWinLoss(p, spinnerResult);
+            player.getBetType().applyWinLoss(player, spinnerResult);
         }
     }
 
@@ -187,6 +195,7 @@ public class GameEngineImpl implements GameEngine
         }
         else
         {
+            player.setBet(0);
             player.setBetType(BetType.NO_BET);
         }
 

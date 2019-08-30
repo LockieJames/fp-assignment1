@@ -4,7 +4,10 @@
     <list default="true" id="f1937b14-bc36-4cf7-aff1-ef748c370da7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/client/SimpleTestClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client/SimpleTestClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/GameEngineImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/GameEngineImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/view/GameEngineCallbackImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/view/GameEngineCallbackImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/SimpleTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/SimpleTestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GameEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameEngineImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameEngineCallbackImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

@@ -56,6 +56,8 @@ public class GameEngineCallbackImpl implements GameEngineCallback
 
     public void spinnerCoinUpdate(Coin coin, GameEngine engine)
     {
+        coin.flip();
+
         logger.log(Level.FINE,"Spinner coin " + coin.getNumber() + " flipped to " + coin.getFace());
     }
 

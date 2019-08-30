@@ -1,7 +1,7 @@
 package view;
 
-import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,6 +31,7 @@ public class GameEngineCallbackImpl implements GameEngineCallback
 
     public void playerCoinUpdate(Player player, Coin coin, GameEngine engine)
     {
+        // Flips the coin of the player that is passed through
         coin.flip();
 
         logger.log(Level.FINE,player.getPlayerName() + " coin " + coin.getNumber() + " flipped to " + coin.getFace());
@@ -45,6 +46,7 @@ public class GameEngineCallbackImpl implements GameEngineCallback
 
     public void spinnerCoinUpdate(Coin coin, GameEngine engine)
     {
+        // Flips the coin of the Spinner that is passed through
         coin.flip();
 
         logger.log(Level.FINE,"Spinner coin " + coin.getNumber() + " flipped to " + coin.getFace());
@@ -54,18 +56,22 @@ public class GameEngineCallbackImpl implements GameEngineCallback
     {
         logger.log(Level.INFO, "Spinner, final result=" + coinPair.toString());
 
+        // Applies all the results onto the players, going off of the results of the spinners coins
         engine.applyBetResults(coinPair);
 
-        LinkedList<Player> players = (LinkedList<Player>) engine.getAllPlayers();
+        // Assign all of the players in the gameEngine to the players linked list
+        List<Player> players = (LinkedList<Player>) engine.getAllPlayers();
 
         String rString = "";
-        Iterator<Player> itr = players.iterator();
 
-        for(int i = 0; i < players.size(); i++)
+        // Loops through all the players in the linked list
+        for(Player player : players)
         {
-            rString += itr.next().toString() + "\n";
+            // Adds the toString of the player to the string
+            rString += player.toString() + "\n";
         }
 
+        // Logs the final results for all the players to the console
         logger.log(Level.INFO, "Final Player Results\n" + rString);
     }
 }

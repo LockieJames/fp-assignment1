@@ -13,8 +13,8 @@ import model.interfaces.Player;
 public class StatusBar extends JPanel
 {
 	private JLabel currentPlayer = new JLabel("", JLabel.LEFT);
-	private JLabel status = new JLabel("", JLabel.CENTER);
-	private JLabel idk = new JLabel("", JLabel.RIGHT);
+	private JLabel lastAction = new JLabel("", JLabel.CENTER);
+	private JLabel status = new JLabel("", JLabel.RIGHT);
 	
 	public StatusBar(GameEngine gameEngine)
 	{
@@ -22,17 +22,27 @@ public class StatusBar extends JPanel
 		
 		currentPlayer.setBorder(BorderFactory.createLineBorder(Color.black));
 		status.setBorder(BorderFactory.createLineBorder(Color.black));
-		idk.setBorder(BorderFactory.createLineBorder(Color.black));
+		lastAction.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		currentPlayer.setText("Add a player");
 		
 		add(currentPlayer);
 		add(status);
-		add(idk);
+		add(lastAction);
 	}
 	
 	public void setCurrentPlayer(Player player)
 	{
-		
+		currentPlayer.setText("Selected player: " + player.getPlayerName());
+	}
+	
+	public void setStatus(String text)
+	{
+		status.setText(text);
+	}
+	
+	public void setLastAction(String text)
+	{
+		lastAction.setText(text);
 	}
 }

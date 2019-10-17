@@ -1,16 +1,8 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.util.*;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-
-import controllers.AddPlayerController;
-import controllers.RemovePlayerController;
-import model.SimplePlayer;
 import model.interfaces.GameEngine;
-import model.interfaces.Player;
 
 public class MainFrame extends JFrame
 {
@@ -30,6 +22,7 @@ public class MainFrame extends JFrame
 		dashboard = new Dashboard(gameEngine);
 		statusBar = new StatusBar(gameEngine);
 		
+		setLayout(new BorderLayout());
 		setSize(700,400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -40,8 +33,6 @@ public class MainFrame extends JFrame
 	
 	public void populate()
 	{
-		setLayout(new BorderLayout());
-	
 		setJMenuBar(menuBar);
 		add(toolBar, BorderLayout.NORTH);
 		add(dashboard, BorderLayout.CENTER);

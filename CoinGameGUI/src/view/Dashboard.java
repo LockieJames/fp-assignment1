@@ -13,5 +13,9 @@ public class Dashboard extends JPanel
 	{
 		this.gameEngine = gameEngine;
 		setLayout(new BorderLayout());
+		
+		coinsPanel = new CoinsPanel();
+		
+		add(coinsPanel);
 	}
 }

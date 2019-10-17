@@ -23,6 +23,7 @@ public class CoinsPanel extends JPanel
 		
 		try 
 		{
+			//TODO change file location
 			heads = ImageIO.read(new File("/Users/lockie/Documents/GitHub/fp-assignment1/CoinGame/img/heads.png"));
 			tails = ImageIO.read(new File("/Users/lockie/Documents/GitHub/fp-assignment1/CoinGame/img/tails.png"));
 		} 

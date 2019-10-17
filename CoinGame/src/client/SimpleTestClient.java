@@ -2,7 +2,6 @@ package client;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import model.CoinPairImpl;
 import model.GameEngineImpl;
 import model.SimplePlayer;

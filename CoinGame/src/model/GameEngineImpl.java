@@ -36,7 +36,7 @@ public class GameEngineImpl implements GameEngine
 
             // This loops through the amount of time it takes for the coin to go up in the air and then land.
             // Continues until the initialDelay is the same or greater than the finalDelay, being increment
-            // by the delayIncrement each interation
+            // by the delayIncrement each iteration
             for(int i = initialDelay1; i <= finalDelay1; i += delayIncrement1)
             {
                 // Loops through all gameEngineCallbacks

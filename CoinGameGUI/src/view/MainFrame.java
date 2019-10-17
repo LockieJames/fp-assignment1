@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
+import model.GameEngineCallbackGUI;
 import model.GameEngineImpl;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
@@ -25,7 +26,8 @@ public class MainFrame extends JFrame
 		
 		// Game Engine
 		gameEngine = new GameEngineImpl();
-		//this.gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
+		this.gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
+		this.gameEngine.addGameEngineCallback(new GameEngineCallbackGUI(this));
 		
 		// Frame set up
 		setLayout(new BorderLayout());

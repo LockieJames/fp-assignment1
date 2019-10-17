@@ -18,7 +18,7 @@ public class Dashboard extends JPanel
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		// Coin panel
-		coinsPanel = new CoinsPanel();
+		coinsPanel = new CoinsPanel(gameEngine, mainFrame);
 		add(coinsPanel);
 		
 		// Interactive panel
@@ -29,5 +29,10 @@ public class Dashboard extends JPanel
 	public InteractivePanel getInteractivePanel()
 	{
 		return interactivePanel;
+	}
+	
+	public CoinsPanel getCoinsPanel()
+	{
+		return coinsPanel;
 	}
 }

@@ -79,4 +79,10 @@ public class MainFrame extends JFrame
 	{
 		return dashboard;
 	}
+	
+	// To return the summary panel for use out of this class
+	public SummaryPanel getSummaryPanel()
+	{
+		return summary;
+	}
 }

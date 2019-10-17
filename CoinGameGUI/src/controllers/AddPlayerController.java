@@ -51,5 +51,6 @@ public class AddPlayerController implements ActionListener
 		mainFrame.getDashboard().getInteractivePanel().addPlayer(player);
 		mainFrame.getStatusBar().setLastAction("New player " + name + " was added");
 		mainFrame.setCurrentPlayer(player);
+		mainFrame.getSummaryPanel().addPlayer(player);
 	}
 }

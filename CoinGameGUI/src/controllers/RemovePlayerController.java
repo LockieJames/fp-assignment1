@@ -37,6 +37,7 @@ public class RemovePlayerController implements ActionListener
 					
 					mainFrame.getDashboard().getInteractivePanel().removePlayer(player);
 					mainFrame.getStatusBar().setLastAction(name + " was removed");
+					mainFrame.getSummaryPanel().removePlayer();
 				}
 			}
 				

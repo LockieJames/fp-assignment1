@@ -22,7 +22,5 @@ public class InfoController implements ActionListener
 	public void actionPerformed(ActionEvent e) 
 	{
 		JOptionPane.showMessageDialog(null, "Lachlan Boughton\nS3769219");
-		
-		System.out.println(mainFrame.getCurrentPlayer().getPlayerName());
 	}
 }

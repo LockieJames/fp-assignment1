@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 
 import controllers.ChangePlayerController;
 import controllers.PlaceBetController;
+import controllers.RemoveBetController;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
 
@@ -58,6 +59,7 @@ public class InteractivePanel extends JPanel
 		
 		// Remove bet
 		removeBet = new JButton("Remove bet");
+		removeBet.addActionListener(new RemoveBetController(gameEngine, mainFrame));
 		add(removeBet);
 		
 		// Spin the players coins
@@ -75,12 +77,14 @@ public class InteractivePanel extends JPanel
 	public void addPlayer(Player player)
 	{
 		players.addItem(player.getPlayerName());
+		updateUI();
 	}
 	
 	// Remove player from the list of players
 	public void removePlayer(Player player)
 	{
 		players.removeItem(player.getPlayerName());
+		updateUI();
 	}
 	
 	// To get the players name selected

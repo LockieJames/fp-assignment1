@@ -29,9 +29,12 @@ public class PlaceBetController implements ActionListener
 			
 			String betType = mainFrame.getDashboard().getInteractivePanel().getBetType();
 			
-			if(bet >= mainFrame.getCurrentPlayer().getPoints())
+			if(bet <= mainFrame.getCurrentPlayer().getPoints())
 			{
 				gameEngine.placeBet(mainFrame.getCurrentPlayer(), bet, asBetType(betType));
+				
+				mainFrame.getStatusBar().setStatus("Bet placed!");
+				mainFrame.getStatusBar().setLastAction(mainFrame.getCurrentPlayer().getPlayerName() + " placed a bet");
 			}
 			else
 			{

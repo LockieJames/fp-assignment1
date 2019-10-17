@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controllers.ChangePlayerController;
+import controllers.PlaceBetController;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
 
@@ -52,6 +53,7 @@ public class InteractivePanel extends JPanel
 		
 		// Place bet
 		placeBet = new JButton("Place bet");
+		placeBet.addActionListener(new PlaceBetController(gameEngine, mainFrame));
 		add(placeBet);
 		
 		// Remove bet
@@ -85,5 +87,17 @@ public class InteractivePanel extends JPanel
 	public String getPlayerName()
 	{
 		return (String) players.getSelectedItem();
+	}
+	
+	// To get the amount entered by the user
+	public String getBetAmount()
+	{
+		return betAmount.getText();
+	}
+	
+	// To get the bet type chosen by the user
+	public String getBetType()
+	{
+		return (String) betTypes.getSelectedItem();
 	}
 }

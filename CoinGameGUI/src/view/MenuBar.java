@@ -23,7 +23,7 @@ public class MenuBar extends JMenuBar
 		removePlayer.addActionListener(new RemovePlayerController(gameEngine, mainFrame));
 		
 		JMenuItem info = new JMenuItem("Student info");
-		info.addActionListener(new InfoController());
+		info.addActionListener(new InfoController(gameEngine, mainFrame));
 		
 		JMenuItem quit = new JMenuItem("Quit");
 		quit.addActionListener(new QuitController());

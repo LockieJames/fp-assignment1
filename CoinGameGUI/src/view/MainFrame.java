@@ -2,70 +2,81 @@ package view;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
+
+import model.GameEngineImpl;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
 
 public class MainFrame extends JFrame
 {
-	private GameEngine gameEngine;
-	private Player currentPlayer = null;
+	private final GameEngine gameEngine;
+	private Player currentPlayer;
+	
+	
 	private MenuBar menuBar;
 	private ToolBar toolBar;
 	private Dashboard dashboard;
 	private SummaryPanel summary;
 	private StatusBar statusBar;
 	
-	public MainFrame(GameEngine gameEngine)
+	public MainFrame()
 	{
 		super("Coin Game");
 		
-		//Game Engine
-		this.gameEngine = gameEngine;
+		// Game Engine
+		gameEngine = new GameEngineImpl();
 		//this.gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
 		
-		
-		menuBar = new MenuBar(gameEngine, this);
-		toolBar = new ToolBar(gameEngine, this);
-		dashboard = new Dashboard(gameEngine, this);
-		statusBar = new StatusBar(gameEngine);
-		summary = new SummaryPanel(gameEngine);
-		
+		// Frame set up
 		setLayout(new BorderLayout());
-		setSize(700,400);
+		setSize(1200,800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		populate();
+		// Menu bar
+		menuBar = new MenuBar(gameEngine, this);
+		setJMenuBar(menuBar);
+		
+		// Tool bar
+		toolBar = new ToolBar(gameEngine, this);
+		add(toolBar, BorderLayout.NORTH);
+		
+		// Dash board
+		dashboard = new Dashboard(gameEngine, this);
+		add(dashboard, BorderLayout.CENTER);
+		
+		// Summary
+		summary = new SummaryPanel(gameEngine);
+		add(summary, BorderLayout.EAST);
+		
+		// Status bar
+		statusBar = new StatusBar(gameEngine);
+		add(statusBar, BorderLayout.SOUTH);
 		
 		setVisible(true);
 	}
-	
-	public void populate()
-	{
-		setJMenuBar(menuBar);
-		add(toolBar, BorderLayout.NORTH);
-		add(dashboard, BorderLayout.CENTER);
-		add(summary, BorderLayout.EAST);
-		add(statusBar, BorderLayout.SOUTH);
-	}
-	
-	public StatusBar getStatusBar()
-	{
-		return statusBar;
-	}
-	
-	public Dashboard getDashboard()
-	{
-		return dashboard;
-	}
-	
+		
+	// To change the current player
 	public void setCurrentPlayer(Player player)
 	{
 		currentPlayer = player;
 		statusBar.setCurrentPlayer(player);
 	}
 	
+	// To return the currently selected player
 	public Player getCurrentPlayer()
 	{
 		return currentPlayer;
+	}
+	
+	// To return the status bar for use out of this class
+	public StatusBar getStatusBar()
+	{
+		return statusBar;
+	}
+	
+	// To return the dash board for use out of this class
+	public Dashboard getDashboard()
+	{
+		return dashboard;
 	}
 }

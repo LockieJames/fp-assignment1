@@ -1,7 +1,10 @@
 package view;
 
+import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -13,52 +16,72 @@ public class InteractivePanel extends JPanel
 {
 	private JTextField betAmount;
 	private JComboBox<String> players;
+	private JComboBox<String> betTypes;
 	private JButton placeBet;
 	private JButton removeBet;
 	private JButton playerSpin;
 	private JButton spinnerSpin;
-	private GameEngine gameEngine;
 	
 	public InteractivePanel(GameEngine gameEngine, MainFrame mainFrame)
-	{
-		this.gameEngine = gameEngine;
-		
-		betAmount = new JTextField("0");
-		players = new JComboBox<String>();
-		placeBet = new JButton("Place bet");
-		removeBet = new JButton("Remove bet");
-		playerSpin = new JButton("Player spin");
-		spinnerSpin = new JButton("Spinner spin");
-		
-		players.addActionListener(new ChangePlayerController(gameEngine, mainFrame));
+	{	
+		// Initial set up
+		setLayout(new GridLayout(4,2));
 		
 		for(Player gamePlayers : gameEngine.getAllPlayers())
 		{
 			players.addItem(gamePlayers.getPlayerName());
 		}
 		
-		add(betAmount);
+		// Player names
+		players = new JComboBox<String>();
+		players.addActionListener(new ChangePlayerController(gameEngine, mainFrame));
 		add(players);
-		add(placeBet);
-		add(removeBet);
-		add(playerSpin);
-		add(spinnerSpin);
 		
+		// Fill up space in grid layout
+		JLabel nothing = new JLabel(" ");
+		add(nothing);
+		
+		// Enter the bet amount
+		betAmount = new JTextField("0");
+		add(betAmount);
+		
+		// Choose the bet type
+		String [] strBetTypes = {"Coin 1", "Coin 2", "Both", "No bet"};
+		betTypes = new JComboBox<String>(strBetTypes);
+		add(betTypes);
+		
+		// Place bet
+		placeBet = new JButton("Place bet");
+		add(placeBet);
+		
+		// Remove bet
+		removeBet = new JButton("Remove bet");
+		add(removeBet);
+		
+		// Spin the players coins
+		playerSpin = new JButton("Player spin");
+		add(playerSpin);
+		
+		// Spin the spinners coins
+		spinnerSpin = new JButton("Spinner spin");
+		add(spinnerSpin);
+
 		setVisible(true);
 	}
 	
+	// Add player to the list of players
 	public void addPlayer(Player player)
 	{
 		players.addItem(player.getPlayerName());
-		updateUI();
 	}
 	
+	// Remove player from the list of players
 	public void removePlayer(Player player)
 	{
 		players.removeItem(player.getPlayerName());
-		updateUI();
 	}
 	
+	// To get the players name selected
 	public String getPlayerName()
 	{
 		return (String) players.getSelectedItem();

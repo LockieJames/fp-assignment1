@@ -2,10 +2,6 @@ package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
-
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
 import view.MainFrame;
@@ -23,10 +19,10 @@ public class ChangePlayerController implements ActionListener
 	
 	public void actionPerformed(ActionEvent e) 
 	{
-		String name = mainFrame.getDashboard().getInteractivePanel().getPlayerName();
-		
-		if(name == null)
+		try 
 		{
+			String name = mainFrame.getDashboard().getInteractivePanel().getPlayerName();
+			
 			Player player = null;
 			
 			for(Player players : gameEngine.getAllPlayers())
@@ -37,16 +33,13 @@ public class ChangePlayerController implements ActionListener
 				}
 			}
 			
-			if(mainFrame.getCurrentPlayer() != null)
+			if(!mainFrame.getCurrentPlayer().getPlayerName().equals(name))
 			{
-				if(!mainFrame.getCurrentPlayer().getPlayerName().equals(name))
-				{
-					mainFrame.getStatusBar().setLastAction("Player changed to " + name);
-					mainFrame.setCurrentPlayer(player);
-				}
+				mainFrame.getStatusBar().setLastAction("Player changed to " + name);
+				mainFrame.setCurrentPlayer(player);
 			}
 		}
-		else
+		catch(NullPointerException epf)
 		{
 			
 		}

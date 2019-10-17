@@ -15,6 +15,6 @@ public class Main
 	{
 		GameEngine gameEngine = new GameEngineImpl();
 		
-		MainFrame mainFrame = new MainFrame(gameEngine);
+		MainFrame mainFrame = new MainFrame();
 	}
 }

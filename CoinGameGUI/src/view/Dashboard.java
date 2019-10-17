@@ -9,19 +9,20 @@ import model.interfaces.GameEngine;
 
 public class Dashboard extends JPanel
 {
-	private GameEngine gameEngine;
 	private CoinsPanel coinsPanel;
 	private InteractivePanel interactivePanel;
 	
 	public Dashboard(GameEngine gameEngine, MainFrame mainFrame)
 	{
-		this.gameEngine = gameEngine;
+		// Panel set up
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
+		// Coin panel
 		coinsPanel = new CoinsPanel();
-		interactivePanel = new InteractivePanel(gameEngine, mainFrame);
-		
 		add(coinsPanel);
+		
+		// Interactive panel
+		interactivePanel = new InteractivePanel(gameEngine, mainFrame);
 		add(interactivePanel);
 	}
 	

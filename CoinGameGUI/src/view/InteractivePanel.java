@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import controllers.ChangePlayerController;
 import controllers.PlaceBetController;
 import controllers.RemoveBetController;
+import controllers.SpinPlayerController;
+import controllers.SpinSpinnerController;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
 
@@ -64,10 +66,12 @@ public class InteractivePanel extends JPanel
 		
 		// Spin the players coins
 		playerSpin = new JButton("Player spin");
+		playerSpin.addActionListener(new SpinPlayerController(gameEngine, mainFrame));
 		add(playerSpin);
 		
 		// Spin the spinners coins
 		spinnerSpin = new JButton("Spinner spin");
+		spinnerSpin.addActionListener(new SpinSpinnerController(gameEngine, mainFrame));
 		add(spinnerSpin);
 
 		setVisible(true);

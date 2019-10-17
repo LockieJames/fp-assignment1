@@ -18,6 +18,11 @@ public class SummaryPanel extends JPanel
 		
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		setPreferredSize(new Dimension(200,0));
+		
+		for(Player players : gameEngine.getAllPlayers())
+		{
+			add(new JLabel(players.getPlayerName()));
+		}
 	}
 	
 	public void addPlayer(Player player)

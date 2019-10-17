@@ -33,7 +33,14 @@ public class StatusBar extends JPanel
 	
 	public void setCurrentPlayer(Player player)
 	{
-		currentPlayer.setText("Selected player: " + player.getPlayerName());
+		if(player != null)
+		{
+			currentPlayer.setText("Selected player: " + player.getPlayerName());
+		}
+		else
+		{
+			currentPlayer.setText("Add a player");
+		}
 	}
 	
 	public void setStatus(String text)

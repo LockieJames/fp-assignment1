@@ -4,6 +4,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import controllers.ChangePlayerController;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
 
@@ -17,7 +19,7 @@ public class InteractivePanel extends JPanel
 	private JButton spinnerSpin;
 	private GameEngine gameEngine;
 	
-	public InteractivePanel(GameEngine gameEngine)
+	public InteractivePanel(GameEngine gameEngine, MainFrame mainFrame)
 	{
 		this.gameEngine = gameEngine;
 		
@@ -27,6 +29,8 @@ public class InteractivePanel extends JPanel
 		removeBet = new JButton("Remove bet");
 		playerSpin = new JButton("Player spin");
 		spinnerSpin = new JButton("Spinner spin");
+		
+		players.addActionListener(new ChangePlayerController(gameEngine, mainFrame));
 		
 		for(Player gamePlayers : gameEngine.getAllPlayers())
 		{
@@ -39,6 +43,8 @@ public class InteractivePanel extends JPanel
 		add(removeBet);
 		add(playerSpin);
 		add(spinnerSpin);
+		
+		setVisible(true);
 	}
 	
 	public void addPlayer(Player player)
@@ -51,5 +57,10 @@ public class InteractivePanel extends JPanel
 	{
 		players.removeItem(player.getPlayerName());
 		updateUI();
+	}
+	
+	public String getPlayerName()
+	{
+		return (String) players.getSelectedItem();
 	}
 }

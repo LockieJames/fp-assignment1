@@ -8,7 +8,7 @@ import model.interfaces.Player;
 public class MainFrame extends JFrame
 {
 	private GameEngine gameEngine;
-	private Player currentPlayer;
+	private Player currentPlayer = null;
 	private MenuBar menuBar;
 	private ToolBar toolBar;
 	private Dashboard dashboard;
@@ -21,12 +21,12 @@ public class MainFrame extends JFrame
 		
 		//Game Engine
 		this.gameEngine = gameEngine;
-		this.gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
+		//this.gameEngine.addGameEngineCallback(new GameEngineCallbackImpl());
 		
 		
 		menuBar = new MenuBar(gameEngine, this);
 		toolBar = new ToolBar(gameEngine, this);
-		dashboard = new Dashboard(gameEngine);
+		dashboard = new Dashboard(gameEngine, this);
 		statusBar = new StatusBar(gameEngine);
 		summary = new SummaryPanel(gameEngine);
 		

@@ -48,15 +48,27 @@ public class GameEngineCallbackGUI implements GameEngineCallback
 	@Override
 	public void playerResult(Player player, CoinPair coinPair, GameEngine engine) 
 	{
-		
-		
+		SwingUtilities.invokeLater(new Runnable()
+		{
+			@Override
+			public void run() 
+			{
+				mainFrame.getSummaryPanel().setResults(player, coinPair);
+			}
+		});
 	}
 
 	@Override
 	public void spinnerResult(CoinPair coinPair, GameEngine engine) 
 	{
-		
-		
+		SwingUtilities.invokeLater(new Runnable()
+		{
+			@Override
+			public void run() 
+			{
+				mainFrame.getSummaryPanel().setNewPoints();
+			}
+		});
 	}
 	
 }

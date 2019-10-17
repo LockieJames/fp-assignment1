@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import model.enumeration.BetType;
 import model.interfaces.GameEngine;
+import model.interfaces.Player;
 import view.MainFrame;
 
 public class PlaceBetController implements ActionListener
@@ -35,6 +36,11 @@ public class PlaceBetController implements ActionListener
 				
 				mainFrame.getStatusBar().setStatus("Bet placed!");
 				mainFrame.getStatusBar().setLastAction(mainFrame.getCurrentPlayer().getPlayerName() + " placed a bet");
+				mainFrame.getSummaryPanel().setBet(mainFrame.getCurrentPlayer(), asBetType(betType), bet);
+				
+				mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(false);
+				mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(true);
+				mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(true);
 			}
 			else
 			{

@@ -31,6 +31,7 @@ public class SpinSpinnerController implements ActionListener
 		{
 			public void run()
 			{
+				mainFrame.getStatusBar().setStatus("Spinner is spinning...");
 				gameEngine.spinSpinner(initialDelay1, finalDelay1, delayIncrement1, initialDelay2, finalDelay2, delayIncrement2);
 				mainFrame.getStatusBar().setStatus("Spinner spun");
 				mainFrame.getStatusBar().setLastAction("Spinner spun");

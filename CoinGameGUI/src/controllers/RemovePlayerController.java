@@ -3,6 +3,8 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+
+import model.enumeration.BetType;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
 import view.MainFrame;
@@ -38,6 +40,21 @@ public class RemovePlayerController implements ActionListener
 					mainFrame.getDashboard().getInteractivePanel().removePlayer(player);
 					mainFrame.getStatusBar().setLastAction(name + " was removed");
 					mainFrame.getSummaryPanel().removePlayer();
+					
+//					boolean have = true;
+//					
+//					for(Player gamePlayers : gameEngine.getAllPlayers())
+//					{
+//						if(!(gamePlayers.getBet() > 0 && !gamePlayers.getBetType().equals(BetType.NO_BET)) && gamePlayers.getResult() == null)
+//						{
+//							have = false;
+//						}
+//					}
+//					
+//					if(have)
+//					{
+//						mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(true);
+//					}
 				}
 			}
 				

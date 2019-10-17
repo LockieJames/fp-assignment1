@@ -73,6 +73,10 @@ public class InteractivePanel extends JPanel
 		spinnerSpin = new JButton("Spinner spin");
 		spinnerSpin.addActionListener(new SpinSpinnerController(gameEngine, mainFrame));
 		add(spinnerSpin);
+		
+//		removeBet.setEnabled(false);
+//		playerSpin.setEnabled(false);
+//		spinnerSpin.setEnabled(false);
 
 		setVisible(true);
 	}
@@ -107,5 +111,30 @@ public class InteractivePanel extends JPanel
 	public String getBetType()
 	{
 		return (String) betTypes.getSelectedItem();
+	}
+	
+	public void enablePlaceBet(boolean bool)
+	{
+		placeBet.setEnabled(bool);
+	}
+	
+	public void enableRemoveBet(boolean bool)
+	{
+		removeBet.setEnabled(bool);
+	}
+	
+	public void enablePlayerSpinBet(boolean bool)
+	{
+		playerSpin.setEnabled(bool);
+	}
+	
+	public void enableSpinnerSpinBet(boolean bool)
+	{
+		spinnerSpin.setEnabled(bool);
+	}
+	
+	public JTextField getBetField()
+	{
+		return betAmount;
 	}
 }

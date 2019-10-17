@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import model.enumeration.BetType;
 import model.interfaces.GameEngine;
+import model.interfaces.Player;
 import view.MainFrame;
 
 public class SpinPlayerController implements ActionListener
@@ -35,9 +37,25 @@ public class SpinPlayerController implements ActionListener
 			{
 				try
 				{
+					mainFrame.getStatusBar().setStatus(mainFrame.getCurrentPlayer().getPlayerName() + " is spinning...");
 					gameEngine.spinPlayer(mainFrame.getCurrentPlayer(), initialDelay1, finalDelay1, delayIncrement1, initialDelay2, finalDelay2, delayIncrement2);
 					mainFrame.getStatusBar().setStatus(mainFrame.getCurrentPlayer().getPlayerName() + " has spun");
 					mainFrame.getStatusBar().setLastAction(mainFrame.getCurrentPlayer().getPlayerName() + " spun");
+					
+//					boolean have = true;
+//					
+//					for(Player players : gameEngine.getAllPlayers())
+//					{
+//						if(!(players.getBet() > 0 && !players.getBetType().equals(BetType.NO_BET)) && players.getResult() == null)
+//						{
+//							have = false;
+//						}
+//					}
+//					
+//					if(have)
+//					{
+//						mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(true);
+//					}
 				}
 				catch(NullPointerException epj)
 				{

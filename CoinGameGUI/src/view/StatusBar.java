@@ -21,14 +21,14 @@ public class StatusBar extends JPanel
 		setLayout(new GridLayout(1,3));
 		
 		currentPlayer.setBorder(BorderFactory.createLineBorder(Color.black));
-		status.setBorder(BorderFactory.createLineBorder(Color.black));
 		lastAction.setBorder(BorderFactory.createLineBorder(Color.black));
+		status.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		currentPlayer.setText("Add a player");
 		
 		add(currentPlayer);
-		add(status);
 		add(lastAction);
+		add(status);
 	}
 	
 	public void setCurrentPlayer(Player player)

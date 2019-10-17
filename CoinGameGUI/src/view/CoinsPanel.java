@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -16,16 +17,18 @@ public class CoinsPanel extends JPanel
 	
 	public CoinsPanel()
 	{
-		//String dir = Paths.get("").toAbsolutePath().toString();
+		setLayout(new FlowLayout());
+		
+		
+		String dir = Paths.get("").toAbsolutePath().toString();
 		
 		BufferedImage heads = null;
 		BufferedImage tails = null;
 		
 		try 
 		{
-			//TODO change file location
-			heads = ImageIO.read(new File("/Users/lockie/Documents/GitHub/fp-assignment1/CoinGame/img/heads.png"));
-			tails = ImageIO.read(new File("/Users/lockie/Documents/GitHub/fp-assignment1/CoinGame/img/tails.png"));
+			heads = ImageIO.read(new File(dir + "/img/heads.png"));
+			tails = ImageIO.read(new File(dir + "/img/tails.png"));
 		} 
 		catch (IOException e) 
 		{

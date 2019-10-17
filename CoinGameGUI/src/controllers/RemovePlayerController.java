@@ -5,14 +5,17 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.interfaces.GameEngine;
 import model.interfaces.Player;
+import view.MainFrame;
 
 public class RemovePlayerController implements ActionListener
 {
 	private GameEngine gameEngine;
+	private MainFrame mainFrame;
 	
-	public RemovePlayerController(GameEngine gameEngine)
+	public RemovePlayerController(GameEngine gameEngine, MainFrame mainFrame)
 	{
 		this.gameEngine = gameEngine;
+		this.mainFrame = mainFrame;
 	}
 	
 	public void actionPerformed(ActionEvent e) 
@@ -31,7 +34,9 @@ public class RemovePlayerController implements ActionListener
 					correct = true;
 					player = players;
 					gameEngine.removePlayer(player);
-					JOptionPane.showMessageDialog(null, player.getPlayerName() + " removed!");
+					
+					mainFrame.getDashboard().getInteractivePanel().removePlayer(player);
+					mainFrame.getStatusBar().setLastAction(name + " was removed");
 				}
 			}
 				

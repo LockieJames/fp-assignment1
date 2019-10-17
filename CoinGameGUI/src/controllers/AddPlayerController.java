@@ -5,15 +5,19 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.SimplePlayer;
 import model.interfaces.GameEngine;
+import model.interfaces.Player;
+import view.MainFrame;
 
 public class AddPlayerController implements ActionListener
 {
 	private static int count = 1;
 	private GameEngine gameEngine;
+	private MainFrame mainFrame;
 
-	public AddPlayerController(GameEngine gameEngine)
+	public AddPlayerController(GameEngine gameEngine, MainFrame mainFrame)
 	{
 		this.gameEngine = gameEngine;
+		this.mainFrame = mainFrame;
 	}
 
 	public void actionPerformed(ActionEvent e) 
@@ -39,8 +43,13 @@ public class AddPlayerController implements ActionListener
 			}
 		}
 		
+		Player player = new SimplePlayer(Integer.toString(count), name, bet);
 		
-		gameEngine.addPlayer(new SimplePlayer(Integer.toString(count), name, bet));
+		gameEngine.addPlayer(player);
 		count++;
+		
+		mainFrame.getDashboard().getInteractivePanel().addPlayer(player);
+		mainFrame.getStatusBar().setLastAction("New player " + name + " was added");
+		mainFrame.setCurrentPlayer(player);
 	}
 }

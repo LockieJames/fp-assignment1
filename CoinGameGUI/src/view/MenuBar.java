@@ -11,16 +11,16 @@ import model.interfaces.GameEngine;
 
 public class MenuBar extends JMenuBar
 {
-	public MenuBar(GameEngine gameEngine)
+	public MenuBar(GameEngine gameEngine, MainFrame mainFrame)
 	{
 		JMenu file = new JMenu("File");
 		add(file);
 		
 		JMenuItem addPlayer = new JMenuItem("Add player");
-		addPlayer.addActionListener(new AddPlayerController(gameEngine));
+		addPlayer.addActionListener(new AddPlayerController(gameEngine, mainFrame));
 		
 		JMenuItem removePlayer = new JMenuItem("Remove player");
-		removePlayer.addActionListener(new RemovePlayerController(gameEngine));
+		removePlayer.addActionListener(new RemovePlayerController(gameEngine, mainFrame));
 		
 		JMenuItem info = new JMenuItem("Student info");
 		info.addActionListener(new InfoController());

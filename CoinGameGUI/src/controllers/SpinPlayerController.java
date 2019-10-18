@@ -42,20 +42,20 @@ public class SpinPlayerController implements ActionListener
 					mainFrame.getStatusBar().setStatus(mainFrame.getCurrentPlayer().getPlayerName() + " has spun");
 					mainFrame.getStatusBar().setLastAction(mainFrame.getCurrentPlayer().getPlayerName() + " spun");
 					
-//					boolean have = true;
-//					
-//					for(Player players : gameEngine.getAllPlayers())
-//					{
-//						if(!(players.getBet() > 0 && !players.getBetType().equals(BetType.NO_BET)) && players.getResult() == null)
-//						{
-//							have = false;
-//						}
-//					}
-//					
-//					if(have)
-//					{
-//						mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(true);
-//					}
+					boolean have = true;
+					
+					for(Player players : gameEngine.getAllPlayers())
+					{
+						if(!(players.getBet() > 0 && !players.getBetType().equals(BetType.NO_BET)) && players.getResult() == null)
+						{
+							have = false;
+						}
+					}
+					
+					if(have)
+					{
+						mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(true);
+					}
 				}
 				catch(NullPointerException epj)
 				{

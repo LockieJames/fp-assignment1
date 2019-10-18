@@ -40,22 +40,22 @@ public class ChangePlayerController implements ActionListener
 				mainFrame.getStatusBar().setLastAction("Player changed to " + name);
 				mainFrame.setCurrentPlayer(player);
 				
-//				if(!(mainFrame.getCurrentPlayer().getBet() > 0 && !mainFrame.getCurrentPlayer().getBetType().equals(BetType.NO_BET)))
-//				{
-//					mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(true);
-//					mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
-//					mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
-//					
-//					mainFrame.getDashboard().getInteractivePanel().getBetField().setText("0");
-//				}
-//				else
-//				{
-//					mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(false);
-//					mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(true);
-//					mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(true);
-//					
-//					mainFrame.getDashboard().getInteractivePanel().getBetField().setText("0");
-//				}
+				if(!(mainFrame.getCurrentPlayer().getBet() > 0 && !mainFrame.getCurrentPlayer().getBetType().equals(BetType.NO_BET)))
+				{
+					mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(true);
+					mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
+					mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
+					
+					mainFrame.getDashboard().getInteractivePanel().getBetField().setText("0");
+				}
+				else
+				{
+					mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(false);
+					mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(true);
+					mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(true);
+					
+					mainFrame.getDashboard().getInteractivePanel().getBetField().setText("0");
+				}
 			}
 		}
 		catch(NullPointerException epf)

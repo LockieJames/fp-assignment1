@@ -53,9 +53,9 @@ public class AddPlayerController implements ActionListener
 		mainFrame.setCurrentPlayer(player);
 		mainFrame.getSummaryPanel().addPlayer(player);
 		
-//		mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(true);
-//		mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
-//		mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
-//		mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(false);
+		mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(true);
+		mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
+		mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
+		mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(false);
 	}
 }

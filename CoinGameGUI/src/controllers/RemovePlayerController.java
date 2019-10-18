@@ -41,20 +41,20 @@ public class RemovePlayerController implements ActionListener
 					mainFrame.getStatusBar().setLastAction(name + " was removed");
 					mainFrame.getSummaryPanel().removePlayer();
 					
-//					boolean have = true;
-//					
-//					for(Player gamePlayers : gameEngine.getAllPlayers())
-//					{
-//						if(!(gamePlayers.getBet() > 0 && !gamePlayers.getBetType().equals(BetType.NO_BET)) && gamePlayers.getResult() == null)
-//						{
-//							have = false;
-//						}
-//					}
-//					
-//					if(have)
-//					{
-//						mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(true);
-//					}
+					boolean have = true;
+					
+					for(Player gamePlayers : gameEngine.getAllPlayers())
+					{
+						if(!(gamePlayers.getBet() > 0 && !gamePlayers.getBetType().equals(BetType.NO_BET)) && gamePlayers.getResult() == null)
+						{
+							have = false;
+						}
+					}
+					
+					if(have)
+					{
+						mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(true);
+					}
 				}
 			}
 				

@@ -32,10 +32,10 @@ public class RemoveBetController implements ActionListener
 			
 			mainFrame.getSummaryPanel().removeBet(mainFrame.getCurrentPlayer());
 			
-//			mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(true);
-//			mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
-//			mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
-//			mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(false);
+			mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(true);
+			//mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
+			mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
+			mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(false);
 		}
 		catch(NullPointerException epj)
 		{

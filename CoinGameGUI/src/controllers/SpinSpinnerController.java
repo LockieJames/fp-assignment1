@@ -31,10 +31,22 @@ public class SpinSpinnerController implements ActionListener
 		{
 			public void run()
 			{
+				mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(false);
+				mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
+				mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
+				mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(false);
+				mainFrame.getDashboard().getInteractivePanel().getBetField().setText("0");
+				
 				mainFrame.getStatusBar().setStatus("Spinner is spinning...");
 				gameEngine.spinSpinner(initialDelay1, finalDelay1, delayIncrement1, initialDelay2, finalDelay2, delayIncrement2);
 				mainFrame.getStatusBar().setStatus("Spinner spun");
 				mainFrame.getStatusBar().setLastAction("Spinner spun");
+				
+				mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(true);
+				mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(false);
+				mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(false);
+				mainFrame.getDashboard().getInteractivePanel().enableSpinnerSpinBet(false);
+				mainFrame.getDashboard().getInteractivePanel().getBetField().setText("0");
 			}
 		}.start();
 	}

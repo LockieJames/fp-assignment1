@@ -74,9 +74,9 @@ public class InteractivePanel extends JPanel
 		spinnerSpin.addActionListener(new SpinSpinnerController(gameEngine, mainFrame));
 		add(spinnerSpin);
 		
-//		removeBet.setEnabled(false);
-//		playerSpin.setEnabled(false);
-//		spinnerSpin.setEnabled(false);
+		removeBet.setEnabled(false);
+		playerSpin.setEnabled(false);
+		spinnerSpin.setEnabled(false);
 
 		setVisible(true);
 	}

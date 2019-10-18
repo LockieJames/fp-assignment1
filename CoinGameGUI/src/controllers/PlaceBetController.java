@@ -38,9 +38,9 @@ public class PlaceBetController implements ActionListener
 				mainFrame.getStatusBar().setLastAction(mainFrame.getCurrentPlayer().getPlayerName() + " placed a bet");
 				mainFrame.getSummaryPanel().setBet(mainFrame.getCurrentPlayer(), asBetType(betType), bet);
 				
-//				mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(false);
-//				mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(true);
-//				mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(true);
+				mainFrame.getDashboard().getInteractivePanel().enablePlaceBet(false);
+				mainFrame.getDashboard().getInteractivePanel().enablePlayerSpinBet(true);
+				mainFrame.getDashboard().getInteractivePanel().enableRemoveBet(true);
 			}
 			else
 			{

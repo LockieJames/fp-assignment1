@@ -16,14 +16,16 @@ import model.interfaces.Player;
 public class SummaryPanel extends JPanel
 {	
 	private GameEngine gameEngine;
+	private MainFrame mainFrame;
 	
 	private Map<String, String> playerData;
 	private Map<String, String> betData;
 	private Map<String, String> betResults;
 	
-	public SummaryPanel(GameEngine gameEngine)
+	public SummaryPanel(GameEngine gameEngine, MainFrame mainFrame)
 	{
 		this.gameEngine = gameEngine;
+		this.mainFrame = mainFrame;
 		
 		this.playerData = new HashMap<String, String>();
 		this.betData = new HashMap<String, String>();
@@ -98,6 +100,8 @@ public class SummaryPanel extends JPanel
 	{
 		removeAll();
 		
+		checkPlayersToRemove();
+		
 		for(Player players : gameEngine.getAllPlayers())
 		{
 			playerData.put(players.getPlayerId(), players.getPlayerName() + " " + players.getPoints());
@@ -119,5 +123,20 @@ public class SummaryPanel extends JPanel
 		updateSummary();
 		
 		updateUI();
+	}
+	
+	public void checkPlayersToRemove()
+	{
+		for(Player players : gameEngine.getAllPlayers())
+		{
+			if(players.getPoints() <= 0)
+			{
+				gameEngine.removePlayer(players);
+				
+				mainFrame.getDashboard().getInteractivePanel().removePlayer(players);
+				mainFrame.getStatusBar().setLastAction(players.getPlayerName() + " was removed");
+				mainFrame.getSummaryPanel().removePlayer();
+			}
+		}
 	}
 }

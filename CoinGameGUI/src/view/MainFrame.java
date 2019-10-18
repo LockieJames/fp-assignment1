@@ -47,7 +47,7 @@ public class MainFrame extends JFrame
 		add(dashboard, BorderLayout.CENTER);
 		
 		// Summary
-		summary = new SummaryPanel(gameEngine);
+		summary = new SummaryPanel(gameEngine, this);
 		add(summary, BorderLayout.EAST);
 		
 		// Status bar
